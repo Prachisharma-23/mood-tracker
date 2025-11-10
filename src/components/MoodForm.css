@@ -1,0 +1,42 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #f7fbff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+form select,
+form input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #b3c6ff;
+  border-radius: 8px;
+  outline: none;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #4e7bff;
+  box-shadow: 0 0 5px rgba(78, 123, 255, 0.3);
+}
+
+form button {
+  margin-top: 5px;
+  background: #4e7bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #345eff;
+}

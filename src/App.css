@@ -1,0 +1,35 @@
+/* App.css */
+
+/* Background layout */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to right, #a7c7e7, #bfe9ff);
+}
+
+/* Centers the content */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* Main content card */
+.main-content {
+  width: 480px;                /* Wider than before */
+  background: #f8faff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  margin: 20px;
+}
+
+/* Make it responsive on small screens */
+@media (max-width: 768px) {
+  .main-content {
+    width: 90%;
+    padding: 25px;
+  }
+}

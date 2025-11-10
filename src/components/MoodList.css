@@ -1,0 +1,37 @@
+.mood-list {
+  margin-top: 20px;
+  background-color: #f7fbff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mood-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style-type: none; /* removes the bullet points */
+  padding: 0;            /* removes default left space */
+  margin: 0;             /* optional - for cleaner layout */
+}
+
+li {
+  margin-bottom: 8px;    /* adds small gap between items */
+  font-size: 16px;
+}
+
+
+.mood-list li {
+  background: #ffffff;
+  border: 1px solid #d9e2ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.mood-list strong {
+  color: #4e7bff;
+}
