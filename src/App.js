@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <div className="main-content">
-      <h1>Mood Tracker</h1>
+      <h1> Mood Tracker</h1>
       <MoodForm onMoodAdded={handleMoodAdded} /> {/* Pass function here */}
       <MoodList moods={moods} /> {/* Pass data here */}
       <MoodChart data={moods} /> {/* Pass chart data */}
