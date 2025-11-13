@@ -6,13 +6,18 @@ export default function MoodForm({ onMoodAdded }) {
   const [mood, setMood] = useState("");
   const [note, setNote] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await API.post("/moods", { mood, note });
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await API.post("/moods", { mood, note });
+    console.log("Response:", res.data);
     onMoodAdded();  // refresh list
     setMood("");
     setNote("");
-  };
+  } catch (error) {
+    console.error("Error posting mood:", error);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>
