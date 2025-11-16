@@ -21,7 +21,11 @@ function App() {
     fetchMoods();
   }, []);
 
-  // ✅ This function refreshes data when a new mood is added
+  // 🔥 ADD THIS — This prints the exact backend response
+  useEffect(() => {
+    console.log("Moods from backend:", moods);
+  }, [moods]);
+
   const handleMoodAdded = () => {
     fetchMoods();
   };
@@ -29,14 +33,13 @@ function App() {
   return (
     <div className="App">
       <div className="main-content">
-      <h1> Mood Tracker</h1>
-      <MoodForm onMoodAdded={handleMoodAdded} /> {/* Pass function here */}
-      <MoodList moods={moods} /> {/* Pass data here */}
-      <MoodChart data={moods} /> {/* Pass chart data */}
+        <h1>Mood Tracker</h1>
+        <MoodForm onMoodAdded={handleMoodAdded} />
+        <MoodList moods={moods} />
+        <MoodChart data={moods} />
       </div>
     </div>
   );
 }
 
 export default App;
-
