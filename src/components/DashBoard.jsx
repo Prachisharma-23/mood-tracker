@@ -1,4 +1,4 @@
-
+import "./Auth.css";
 <div className="page">
   <header className="header">
     <div>
