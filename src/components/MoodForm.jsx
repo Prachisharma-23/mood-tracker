@@ -5,11 +5,12 @@ import "./MoodForm.css";
 export default function MoodForm({ onMoodAdded }) {
   const [mood, setMood] = useState("");
   const [note, setNote] = useState("");
+  const user= JSON.parse(localStorage.getItem("user"));
 
  const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await API.post("/moods", { mood, note });
+    const res = await API.post("/moods", { mood, note , userId: user.id});
     console.log("Response:", res.data);
     onMoodAdded();  // refresh list
     setMood("");
@@ -20,7 +21,7 @@ export default function MoodForm({ onMoodAdded }) {
 };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="mood-form" onSubmit={handleSubmit}>
       <h3>Add Mood</h3>
       <select value={mood} onChange={(e) => setMood(e.target.value)} required>
         <option value="">Select mood</option>

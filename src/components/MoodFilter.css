@@ -1,0 +1,44 @@
+.mood-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Default button style */
+.mood-filter button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.mood-filter button:hover {
+  background-color: #eaeaea;
+}
+
+/* Active filter */
+.mood-filter button.active {
+  background-color: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.25);
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  .mood-filter {
+    justify-content: center;
+  }
+
+  .mood-filter button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}

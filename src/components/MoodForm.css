@@ -1,42 +1,67 @@
-form {
+/* MoodForm.css */
+
+.mood-form {
+  max-width: 520px;
+  margin: 30px auto;            /* center horizontally */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background-color: #f7fbff;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 16px;
 }
 
-form select,
-form input {
-  width: 90%;
-  padding: 10px;
+/* Title */
+.mood-form h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Select + input */
+.mood-form select,
+.mood-form input {
+  width: 100%;
+  padding: 12px 14px;
   font-size: 1rem;
-  border: 1px solid #b3c6ff;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid #d0d7ff;
   outline: none;
+  transition: all 0.2s ease;
 }
 
-form input:focus,
-form select:focus {
+/* Focus effect */
+.mood-form select:focus,
+.mood-form input:focus {
   border-color: #4e7bff;
-  box-shadow: 0 0 5px rgba(78, 123, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(78, 123, 255, 0.15);
 }
 
-form button {
-  margin-top: 5px;
-  background: #4e7bff;
+/* Button */
+.mood-form button {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #4e7bff, #345eff);
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.05rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-form button:hover {
-  background: #345eff;
+/* Button hover */
+.mood-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(78, 123, 255, 0.3);
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  .mood-form {
+    margin: 20px;
+    padding: 24px;
+  }
 }

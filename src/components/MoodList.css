@@ -35,3 +35,9 @@ li {
 .mood-list strong {
   color: #4e7bff;
 }
+.empty-state {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+

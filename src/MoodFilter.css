@@ -1,0 +1,25 @@
+.mood-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.mood-filter button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #3f51b5;
+  background: white;
+  color: #3f51b5;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mood-filter button.active {
+  background: #3f51b5;
+  color: white;
+}
+
+.mood-filter button:hover {
+  opacity: 0.9;
+}

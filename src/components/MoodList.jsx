@@ -1,24 +1,39 @@
+import { useState } from "react";
+import { filterMoodsByDate } from "../utils/moodDateFilter";
+import MoodFilter from "./MoodFilter";
 import "./MoodList.css";
 
-export default function MoodList({ moods }) {
+export default function MoodList({ moods = [] }) {
+  const [filter, setFilter] = useState("7");
 
-  const recentMoods = moods.slice(-7);
+  const filteredMoods = filterMoodsByDate(moods, filter);
+
   return (
-    <div>
-      <h3>Recent Moods</h3>
-      <ul>
-        {recentMoods.length === 0 ? (
-          <li>No moods recorded yet.</li>
-        ) : (
-          recentMoods.map((m) => (
-            <li key={m.id}>
-              <strong>{m.mood}</strong>
-              {m.note && ` - ${m.note}`}
-              {m.date && ` (${new Date(m.date).toDateString()})`}
+    <div className="card">
+      <h2>Recent Moods</h2>
+
+      {/* Filter buttons */}
+      <MoodFilter filter={filter} setFilter={setFilter} />
+
+      {/* Mood list */}
+      {filteredMoods.length === 0 ? (
+        <p className="empty">No moods found 🌱</p>
+      ) : (
+        <ul className="mood-list">
+          {filteredMoods.map((mood) => (
+            <li key={mood.id} className="mood-item">
+              <strong>{mood.mood}</strong>
+
+              {mood.note && <span> — {mood.note}</span>}
+
+              <span className="mood-date">
+                {" "}
+                ({new Date(mood.timestamp).toDateString()})
+              </span>
             </li>
-          ))
-        )}
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
